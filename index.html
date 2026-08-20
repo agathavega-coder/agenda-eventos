@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos - Escola Futuro do Saber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">🏫</div>
+                <h1>Escola Futuro do Saber</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#proximo-evento">Próximo Evento</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#inscricao">Inscrição</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO / CONTADOR -->
+        <section id="proximo-evento" class="hero">
+            <div class="hero-content">
+                <h2>⏳ Próximo Evento Em Destaque</h2>
+                <h3 id="nome-proximo-evento">Feira de Ciências e Tecnologia</h3>
+                <div id="contador" class="contador">
+                    <div><span id="dias">00</span><p>Dias</p></div>
+                    <div><span id="horas">00</span><p>Horas</p></div>
+                    <div><span id="minutos">00</span><p>Minutos</p></div>
+                    <div><span id="segundos">00</span><p>Segundos</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE EVENTOS -->
+        <section id="eventos" class="eventos-container">
+            <h2>📅 Agenda Escolar</h2>
+
+            <!-- BUSCA E FILTROS -->
+            <div class="controles">
+                <input type="text" id="campo-busca" placeholder="🔎 Pesquisar eventos por nome ou local...">
+                <div class="filtros-categoria">
+                    <button class="btn-filtro active" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro" data-categoria="Esportes">🏆 Esportes</button>
+                    <button class="btn-filtro" data-categoria="Educação">📚 Educação</button>
+                    <button class="btn-filtro" data-categoria="Cultura">🎨 Cultura</button>
+                    <button class="btn-filtro" data-categoria="Tecnologia">💻 Tecnologia</button>
+                </div>
+            </div>
+
+            <!-- TABELA DE EVENTOS -->
+            <div class="tabela-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Evento</th>
+                            <th>Categoria</th>
+                            <th>Local</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-eventos-corpo">
+                        <!-- Renderizado via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE INSCRIÇÃO -->
+        <section id="inscricao" class="secao-formulario">
+            <h2>📝 Inscrição em Eventos</h2>
+            <form id="form-inscricao" class="form">
+                <div class="form-group">
+                    <label for="nome-aluno">Nome do Aluno / Responsável:</label>
+                    <input type="text" id="nome-aluno" required placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail de Contato:</label>
+                    <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="select-evento">Selecione o Evento:</label>
+                    <select id="select-evento" required>
+                        <!-- Carregado via JS -->
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Confirmar Inscrição</button>
+            </form>
+            <div id="mensagem-sucesso" class="mensagem-sucesso hidden">
+                ✅ Inscrição realizada com sucesso!
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CONTATO E INFORMAÇÕES ADICIONAIS -->
+        <div class="grid-informacoes">
+            <section id="contato" class="contato-box">
+                <h2>📞 Área de Contato</h2>
+                <p><strong>Telefone:</strong> (11) 4002-8922</p>
+                <p><strong>E-mail:</strong> contato@futurodosaber.edu.br</p>
+                <p><strong>Endereço:</strong> Av. das Nações, 1000 - Centro</p>
+            </section>
+
+            <aside class="avisos-box">
+                <h2>📌 Avisos Importantes</h2>
+                <p>Alunos devem comparecer aos eventos esportivos com uniforme de educação física.</p>
+                <p>Inscrições encerradas 24 horas antes do início do evento.</p>
+            </aside>
+        </div>
+    </main>
+
+    <!-- MODAL DE DETALHES -->
+    <div id="modal-detalhes" class="modal hidden">
+        <div class="modal-content">
+            <span id="btn-fechar-modal" class="fechar">&times;</span>
+            <h3 id="modal-titulo"></h3>
+            <p><strong>Categoria:</strong> <span id="modal-categoria"></span></p>
+            <p><strong>Data e Horário:</strong> <span id="modal-datahora"></span></p>
+            <p><strong>Local:</strong> <span id="modal-local"></span></p>
+            <p><strong>Descrição:</strong> <span id="modal-descricao"></span></p>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 Escola Futuro do Saber. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
